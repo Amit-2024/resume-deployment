@@ -51,7 +51,7 @@ icons/ # Social media icons img/ # Images for the website index.html # Main HTML
 ### 5. **Amazon Route 53: Domain Configuration**
 - **Created a Hosted Zone**:
 - Added DNS records to Route 53:
-  - **A (Alias) Record**: Pointed `amitsemwal.online` and `www.amitsemwal.online` to the CloudFront distribution.
+  - **A (Alias) Record**: Pointed `resume.amitsemwal.online` to the CloudFront distribution.
 
 - Validated DNS propagation and verified the domain's accessibility.
 
@@ -132,7 +132,7 @@ icons/ # Social media icons img/ # Images for the website index.html # Main HTML
 ---
 
 ## Live Demo
-🌐 Check out the live project here: [https://amitsemwal.online](https://amitsemwal.online)
+🌐 Check out the live project here: [https://resume.amitsemwal.online](https://resume.amitsemwal.online)
 
 ---
 
