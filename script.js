@@ -6,13 +6,22 @@ document.querySelectorAll('.sidebar a').forEach(link => {
     });
 });
 
-const ws = new WebSocket('wss://7hv68471za.execute-api.ap-south-1.amazonaws.com/production/');
 
-ws.onmessage = (event) => {
-    const data = JSON.parse(event.data);
-    document.getElementById('visitorCount').innerText = data.VisitorCount;
-};
 
-ws.onopen = () => console.log('WebSocket connection established.');
-ws.onerror = (err) => console.error('WebSocket error:', err);
-ws.onclose = () => console.log('WebSocket connection closed.');
+async function fetchVisitorCount() {
+    try {
+        // Replace with your actual API Gateway endpoint
+        const response = await fetch('https://8rg0dpbz41.execute-api.ap-south-1.amazonaws.com');
+        const data = await response.json();
+
+        // Update the visitor count in the div
+        document.getElementById('visitorCount').innerText = `Visitor Count: ${data.visitorCount}`;
+    } catch (error) {
+        console.error('Error fetching visitor count:', error);
+        document.getElementById('visitorCount').innerText = 'Error fetching visitor count';
+    }
+}
+
+// Call the function when the page loads
+fetchVisitorCount();
+
