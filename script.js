@@ -6,22 +6,14 @@ document.querySelectorAll('.sidebar a').forEach(link => {
     });
 });
 
-
-
-async function fetchVisitorCount() {
-    try {
-        // Replace with your actual API Gateway endpoint
-        const response = await fetch('https://24u4tpkrs9.execute-api.us-east-1.amazonaws.com/dev');
-        const data = await response.json();
-
-        // Update the visitor count in the div
-        document.getElementById('visitorCount').innerText = `Visitor Count: ${data.visitorCount}`;
-    } catch (error) {
-        console.error('Error fetching visitor count:', error);
-        document.getElementById('visitorCount').innerText = 'Error fetching visitor count';
-    }
-}
-
-// Call the function when the page loads
-fetchVisitorCount();
-
+fetch('https://24u4tpkrs9.execute-api.us-east-1.amazonaws.com/dev/incrementVisitorCount', {
+   method: 'POST',
+})
+.then(response => response.json())
+.then(data => {
+   console.log('Visitor count updated:', data.count);
+   document.getElementById('visitorCount').innerText = 'Visitor count: ' + data.count;
+})
+.catch((error) => {
+   console.error('Error:', error);
+});
