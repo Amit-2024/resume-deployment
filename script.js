@@ -12,7 +12,7 @@ fetch('https://24u4tpkrs9.execute-api.us-east-1.amazonaws.com/dev/incrementVisit
 .then(response => response.json())
 .then(data => {
    console.log('Visitor count updated:', data.count);
-   document.getElementById('visitorCount').innerText = 'Visitor count: ' + data.count;
+   document.getElementById('visitorCount').innerText =  data.count;
 })
 .catch((error) => {
    console.error('Error:', error);
