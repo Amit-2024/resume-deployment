@@ -11,7 +11,7 @@ document.querySelectorAll('.sidebar a').forEach(link => {
 async function fetchVisitorCount() {
     try {
         // Replace with your actual API Gateway endpoint
-        const response = await fetch('https://8rg0dpbz41.execute-api.ap-south-1.amazonaws.com');
+        const response = await fetch('https://24u4tpkrs9.execute-api.us-east-1.amazonaws.com');
         const data = await response.json();
 
         // Update the visitor count in the div
